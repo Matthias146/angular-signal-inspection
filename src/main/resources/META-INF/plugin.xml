@@ -1,0 +1,23 @@
+<idea-plugin>
+    <id>dev.angularsignals.inspection</id>
+    <name>Angular Signal Inspection</name>
+    <vendor>Matthias</vendor>
+
+    <description>
+        Adds additional inspections for Angular signals in templates.
+    </description>
+
+    <depends>com.intellij.modules.platform</depends>
+    <depends>JavaScript</depends>
+    <depends>AngularJS</depends>
+    <extensions defaultExtensionNs="com.intellij">
+        <localInspection
+                language="Angular2"
+                shortName="UncalledAngularSignal"
+                displayName="Uncalled Angular signal"
+                groupName="Angular"
+                enabledByDefault="true"
+                level="WARNING"
+                implementationClass="dev.angularsignals.inspection.UncalledAngularSignalInspection"/>
+    </extensions>
+</idea-plugin>
