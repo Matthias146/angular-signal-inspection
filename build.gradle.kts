@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "dev.angularsignals"
-version = "0.1.0"
+version = "0.1.1"
 
 repositories {
     mavenCentral()
@@ -17,15 +17,22 @@ repositories {
 dependencies {
     intellijPlatform {
         intellijIdeaUltimate("2026.2")
-
         bundledPlugin("AngularJS")
     }
 
     testImplementation(kotlin("test"))
 }
 
+intellijPlatform {
+    pluginVerification {
+        ides {
+            current()
+        }
+    }
+}
+
 kotlin {
-    jvmToolchain(21)
+    jvmToolchain(25)
 }
 
 tasks.test {

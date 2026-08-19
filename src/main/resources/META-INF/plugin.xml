@@ -1,18 +1,43 @@
 <idea-plugin>
     <id>dev.angularsignals.inspection</id>
-    <name>Angular Signal Inspection</name>
-    <vendor>Matthias</vendor>
 
-    <description>
-        Adds additional inspections for Angular signals in templates.
-    </description>
+    <name>Angular Signal Inspection</name>
+
+    <vendor>
+        Matthias
+    </vendor>
+
+    <description><![CDATA[
+        Detects Angular signals that are referenced in templates without being invoked.
+
+        <p>
+            The inspection supports Angular template interpolations and control-flow
+            expressions such as <code>@if</code> and <code>@for</code>.
+        </p>
+
+        <p>
+            Example:
+        </p>
+
+        <pre>
+{{ pageNumber }}
+        </pre>
+
+        <p>
+            should be:
+        </p>
+
+        <pre>
+{{ pageNumber() }}
+        </pre>
+    ]]></description>
 
     <depends>com.intellij.modules.platform</depends>
     <depends>JavaScript</depends>
     <depends>AngularJS</depends>
+
     <extensions defaultExtensionNs="com.intellij">
         <localInspection
-                language="Angular2"
                 shortName="UncalledAngularSignal"
                 displayName="Uncalled Angular signal"
                 groupName="Angular"

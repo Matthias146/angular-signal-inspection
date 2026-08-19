@@ -1,0 +1,25 @@
+<html>
+<body>
+<p>
+    Reports Angular signals that are referenced in a template without being invoked.
+</p>
+
+<p>
+    Angular signals are functions and should be called using parentheses when their value
+    is accessed from a template.
+</p>
+
+<p>Example:</p>
+
+<pre><code>{{ pageNumber }}</code></pre>
+
+<p>Should be:</p>
+
+<pre><code>{{ pageNumber() }}</code></pre>
+
+<p>
+    The inspection also detects uncalled signals inside Angular control-flow expressions
+    such as <code>@if</code> and <code>@for</code>.
+</p>
+</body>
+</html>
